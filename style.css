@@ -2892,5 +2892,450 @@ footer {
         transition: none !important;
     }
 }
+/* ========================================================
+   MOBILE RESPONSIVE FIX
+   ======================================================== */
+
+/* Tablets + Mobile */
+@media (max-width: 900px) {
+
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    /* ---------- NAVBAR ---------- */
+    .navbar {
+        height: 64px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 1.35rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 64px;
+        left: 12px;
+        right: 12px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        padding: 14px;
+        background: rgba(8, 8, 12, 0.97);
+        border: 1px solid rgba(255, 0, 60, 0.25);
+        border-radius: 12px;
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+        pointer-events: none;
+
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .links {
+        display: block;
+        padding: 11px 12px;
+        font-size: 0.82rem;
+    }
+
+    .nav-resume-btn,
+    .nav-cta-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        margin-top: 4px;
+    }
+
+    /* ---------- HERO ---------- */
+
+    #hero {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        text-align: center;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .badge-terminal {
+        font-size: 0.72rem;
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2rem, 8vw, 2.7rem);
+        line-height: 1.15;
+    }
+
+    .hero-subtitle {
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+
+    .hero-tagline-bar {
+        max-width: 100%;
+        font-size: 0.75rem;
+        text-align: left;
+    }
+
+    .hero-bio-p {
+        font-size: 0.95rem;
+        max-width: 500px;
+    }
+
+    /* ---------- STATS ---------- */
+
+    .hero-stats {
+        width: 100%;
+        max-width: 500px;
+        gap: 8px;
+    }
+
+    .stat-pill {
+        padding: 8px 5px;
+    }
+
+    .stat-badge-text {
+        font-size: 0.95rem;
+    }
+
+    .stat-num {
+        font-size: 1.15rem;
+    }
+
+    .stat-label {
+        font-size: 0.62rem;
+    }
+
+    /* ---------- SOCIALS ---------- */
+
+    .hero-socials {
+        justify-content: center;
+    }
+
+    /* ---------- PROFILE ---------- */
+
+    .profile-container {
+        margin-top: 0;
+    }
+
+    .profile-3d-card {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ring-outer-glow {
+        width: 290px;
+        height: 290px;
+    }
+
+    .ring-inner-glow {
+        width: 255px;
+        height: 255px;
+    }
+
+    .image-wrapper-3d {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* ---------- SECTIONS ---------- */
+
+    #about,
+    #skills,
+    #certifications,
+    #projects,
+    #contact {
+        padding: 50px 0;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-intro {
+        font-size: 0.88rem;
+    }
+}
+
+
+/* ========================================================
+   SMALL MOBILE
+   ======================================================== */
+
+@media (max-width: 600px) {
+
+    html {
+        scroll-padding-top: 65px;
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* ---------- PRELOADER ---------- */
+
+    .preloader-container {
+        width: calc(100% - 30px);
+        max-width: 360px;
+    }
+
+    .preloader-scanner {
+        width: 95px;
+        height: 95px;
+        margin-bottom: 20px;
+    }
+
+    .preloader-count {
+        font-size: 2.8rem;
+    }
+
+    .preloader-unit {
+        font-size: 1.4rem;
+    }
+
+    .preloader-status-text {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+
+    .pre-glitch {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    .pre-sub {
+        font-size: 0.65rem;
+    }
+
+    /* ---------- HERO ---------- */
+
+    #hero {
+        padding-top: 90px;
+        padding-bottom: 35px;
+    }
+
+    .hero-content {
+        gap: 35px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.8rem, 9vw, 2.35rem);
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .hero-tagline-bar {
+        font-size: 0.68rem;
+        padding: 6px 9px;
+    }
+
+    .hero-bio-p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+    /* ---------- STATS ---------- */
+
+    .hero-stats {
+        gap: 5px;
+        margin-bottom: 18px;
+    }
+
+    .stat-pill {
+        padding: 7px 3px;
+        border-radius: 6px;
+    }
+
+    .stat-badge-text {
+        font-size: 0.72rem;
+    }
+
+    .stat-num {
+        font-size: 0.95rem;
+    }
+
+    .stat-plus {
+        font-size: 0.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.5rem;
+        letter-spacing: 0;
+    }
+
+    /* ---------- PROFILE ---------- */
+
+    .profile-3d-card {
+        width: 260px;
+        height: 260px;
+    }
+
+    .ring-outer-glow {
+        width: 250px;
+        height: 250px;
+    }
+
+    .ring-inner-glow {
+        width: 220px;
+        height: 220px;
+    }
+
+    .image-wrapper-3d {
+        width: 190px;
+        height: 190px;
+    }
+
+    .profile-hud-tag {
+        font-size: 0.6rem;
+        padding: 4px 9px;
+    }
+
+    .floating-badge {
+        font-size: 0.6rem;
+        padding: 5px 8px;
+    }
+
+    /* ---------- SECTION TITLES ---------- */
+
+    #about,
+    #skills,
+    #certifications,
+    #projects,
+    #contact {
+        padding: 45px 0;
+    }
+
+    .section-title {
+        margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+        font-size: 1.55rem;
+    }
+
+    .sub-heading {
+        font-size: 0.68rem;
+    }
+
+    .section-intro {
+        font-size: 0.82rem;
+        padding: 0 5px;
+    }
+
+    /* ---------- GENERAL ---------- */
+
+    img {
+        max-width: 100%;
+    }
+
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+
+/* ========================================================
+   VERY SMALL PHONES - 320px
+   ======================================================== */
+
+@media (max-width: 360px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .logo {
+        font-size: 1.15rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.65rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .hero-tagline-bar {
+        font-size: 0.6rem;
+    }
+
+    .hero-bio-p {
+        font-size: 0.82rem;
+    }
+
+    .profile-3d-card {
+        width: 235px;
+        height: 235px;
+    }
+
+    .ring-outer-glow {
+        width: 225px;
+        height: 225px;
+    }
+
+    .ring-inner-glow {
+        width: 200px;
+        height: 200px;
+    }
+
+    .image-wrapper-3d {
+        width: 170px;
+        height: 170px;
+    }
+
+    .stat-badge-text {
+        font-size: 0.65rem;
+    }
+
+    .stat-num {
+        font-size: 0.85rem;
+    }
+
+    .stat-label {
+        font-size: 0.45rem;
+    }
+}
 
 
