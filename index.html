@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Krishna Kumar | B.Tech CSE Student & Aspiring Developer</title>
+    <meta name="description" content="Portfolio of Krishna Kumar - 2nd Year B.Tech Computer Science Engineering student at BRCM College of Engineering and Technology, Gaya, Bihar. Curious mind. Creative soul. Constantly building.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================================================
+         FUTURISTIC LIVING BACKGROUND LAYER (MODERN CYBERPUNK ATMOSPHERE)
+         1. Animated Glowing Gradient Blobs
+         2. Interactive Particles on Canvas
+         3. Subtle Futuristic Cyber Grid
+         4. Ambient Animated Gradient Atmosphere
+         5. Floating Depth Rings (Spatial Hologram)
+         6. Mouse-following Interactive Ambient Glow Aura
+         ======================================================== -->
+    <div class="living-bg-container" id="livingBgContainer" aria-hidden="true">
+        <!-- 1. Ambient Animated Atmosphere Gradient -->
+        <div class="bg-atmosphere-glow"></div>
+
+        <!-- 2. Futuristic Subtle Grid -->
+        <div class="bg-cyber-grid"></div>
+
+        <!-- 3. Animated Glowing Gradient Blobs -->
+        <div class="bg-blob blob-red"></div>
+        <div class="bg-blob blob-pink"></div>
+        <div class="bg-blob blob-purple"></div>
+
+        <!-- 4. Depth: Holographic Depth Rings -->
+        <div class="bg-depth-ring ring-1"></div>
+        <div class="bg-depth-ring ring-2"></div>
+        <div class="bg-depth-ring ring-3"></div>
+
+        <!-- 5. Interactive Particle Canvas -->
+        <canvas id="bgCyberCanvas" class="bg-cyber-canvas"></canvas>
+
+        <!-- 6. Mouse Interaction: Cursor Following Ambient Glow Aura -->
+        <div class="cursor-ambient-aura" id="cursorAmbientAura"></div>
+    </div>
+
+    <!-- ========================================================
+         CYBERPUNK PRELOADER (0 to 100% COOL LOADING SCREEN)
+         ======================================================== -->
+    <div id="preloader" class="preloader" aria-hidden="true">
+        <div class="preloader-overlay"></div>
+        <div class="preloader-container">
+            <!-- Animated Cyber Hologram Rings -->
+            <div class="preloader-scanner">
+                <div class="scanner-ring ring-outer"></div>
+                <div class="scanner-ring ring-mid"></div>
+                <div class="scanner-core">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+            </div>
+
+            <!-- Terminal Name Tag -->
+            <div class="preloader-brand">
+                <span class="pre-glitch" data-text="KRISHNA KUMAR">KRISHNA KUMAR</span>
+                <span class="pre-sub">// BRCM COLLEGE OF ENGG & TECH</span>
+            </div>
+
+            <!-- Large 0-100% Counter -->
+            <div class="preloader-counter-box">
+                <span class="preloader-count" id="preloaderCount">0</span>
+                <span class="preloader-unit">%</span>
+            </div>
+
+            <!-- Glowing Progress Bar Track -->
+            <div class="preloader-bar-track">
+                <div class="preloader-bar-fill" id="preloaderBar"></div>
+            </div>
+
+            <!-- Dynamic System Status Line -->
+            <div class="preloader-status-text" id="preloaderStatus">
+                INITIALIZING SYSTEM CORE...
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toastMessage">Action completed successfully!</span>
+    </div>
+
+    <!-- ========================================================
+         RESUME VIEWER MODAL (EMBEDDED PDF VIEWER)
+         ======================================================== -->
+    <div id="resumePhotoModal" class="photo-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="resumePhotoTitle">
+        <div class="photo-modal-backdrop" id="closeResumePhotoBackdrop"></div>
+        <div class="photo-modal-dialog resume-modal-dialog">
+            <div class="photo-modal-header">
+                <div class="terminal-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <span class="photo-modal-title" id="resumePhotoTitle">
+                    <i class="fa-solid fa-file-pdf"></i> Krishna_Kumar_Resume.pdf
+                </span>
+                <button class="photo-modal-close" id="closeResumePhotoBtn" aria-label="Close Resume">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="photo-modal-body resume-modal-body">
+                <div class="photo-frame resume-frame">
+                    <!-- Embedded PDF Viewer -->
+                    <iframe
+                        src="resume.pdf"
+                        class="resume-pdf-frame"
+                        id="resumePdfFrame"
+                        title="Krishna Kumar's Resume"
+                    ></iframe>
+                </div>
+            </div>
+
+            <div class="photo-modal-footer">
+                <a href="resume.pdf" target="_blank" class="btn btn-outline btn-sm" id="openResumePhotoTab">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in New Tab
+                </a>
+                <a href="resume.pdf" download="Krishna_Kumar_Resume.pdf" class="btn btn-primary btn-sm" id="downloadResumeBtn">
+                    <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="btn btn-outline btn-sm" id="closeResumePhotoFooterBtn">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         CERTIFICATES SLIDER MODAL (SLIDE BY SLIDE WITH DESCRIPTIONS)
+         ======================================================== -->
+    <div id="certSliderModal" class="photo-modal cert-slider-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+        <div class="photo-modal-backdrop" id="closeCertBackdrop"></div>
+        <div class="photo-modal-dialog cert-modal-dialog">
+            <div class="photo-modal-header">
+                <div class="terminal-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <span class="photo-modal-title" id="certModalTitle">
+                    <i class="fa-solid fa-award"></i> Certificates & Achievements
+                </span>
+                <div class="cert-modal-header-right">
+                    <span class="cert-slide-counter" id="certCounter">1 / 4</span>
+                    <button class="photo-modal-close" id="closeCertBtn" aria-label="Close Certificates">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="photo-modal-body cert-modal-body">
+                <!-- Navigation Prev/Next Arrows -->
+                <button class="cert-nav-arrow cert-prev" id="certModalPrev" aria-label="Previous Certificate">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <!-- Certificates Slide Track -->
+                <div class="cert-slides-track" id="certSlidesTrack">
+
+                    <!-- Slide 1 -->
+                    <div class="cert-slide active" data-index="0">
+                        <div class="cert-photo-container">
+                            <img src="cert1.jpg" alt="DSA in C++ Certificate Photo" class="cert-photo">
+                            <div class="cert-img-fallback">
+                                <i class="fa-solid fa-diagram-project fallback-cert-icon"></i>
+                                <span>Certificate Photo (cert1.jpg)</span>
+                            </div>
+                        </div>
+                        <div class="cert-desc-box">
+                            <div class="cert-desc-header">
+                                <h3>Data Structures & Algorithms in C++</h3>
+                                <span class="cert-badge">Verified Skill</span>
+                            </div>
+                            <p class="cert-desc-issuer"><i class="fa-solid fa-building-columns"></i> Problem Solving Milestone</p>
+                            <p class="cert-desc-text">
+                                Continuous study and implementation of fundamental and advanced data structures (Arrays, Linked Lists, Stacks, Queues, Trees, Graphs) and algorithmic optimization.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="cert-slide" data-index="1">
+                        <div class="cert-photo-container">
+                            <img src="cert2.jpg" alt="Web Development Certificate Photo" class="cert-photo">
+                            <div class="cert-img-fallback">
+                                <i class="fa-solid fa-laptop-code fallback-cert-icon"></i>
+                                <span>Certificate Photo (cert2.jpg)</span>
+                            </div>
+                        </div>
+                        <div class="cert-desc-box">
+                            <div class="cert-desc-header">
+                                <h3>Frontend Web Development</h3>
+                                <span class="cert-badge">Course Certificate</span>
+                            </div>
+                            <p class="cert-desc-issuer"><i class="fa-solid fa-certificate"></i> Hands-on Web Milestone</p>
+                            <p class="cert-desc-text">
+                                Hands-on development of responsive, modern web interfaces with semantic HTML5, modern CSS3 layout systems (Flexbox & Grid), DOM manipulation, and JavaScript logic.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="cert-slide" data-index="2">
+                        <div class="cert-photo-container">
+                            <img src="cert3.jpg" alt="Python & AI Exploration Photo" class="cert-photo">
+                            <div class="cert-img-fallback">
+                                <i class="fa-brands fa-python fallback-cert-icon"></i>
+                                <span>Certificate Photo (cert3.jpg)</span>
+                            </div>
+                        </div>
+                        <div class="cert-desc-box">
+                            <div class="cert-desc-header">
+                                <h3>Python Essentials & AI Exploration</h3>
+                                <span class="cert-badge">Technical Milestone</span>
+                            </div>
+                            <p class="cert-desc-issuer"><i class="fa-solid fa-award"></i> Python & AI Basics</p>
+                            <p class="cert-desc-text">
+                                Practical study of core Python syntax, modular programming, object-oriented concepts, and fundamentals of applying machine learning libraries for data analysis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="cert-slide" data-index="3">
+                        <div class="cert-photo-container">
+                            <img src="cert4.jpg" alt="BRCM CET Technical Events Photo" class="cert-photo">
+                            <div class="cert-img-fallback">
+                                <i class="fa-solid fa-trophy fallback-cert-icon"></i>
+                                <span>Certificate Photo (cert4.jpg)</span>
+                            </div>
+                        </div>
+                        <div class="cert-desc-box">
+                            <div class="cert-desc-header">
+                                <h3>BRCM CET Technical Events & Contests</h3>
+                                <span class="cert-badge">Academic Milestone</span>
+                            </div>
+                            <p class="cert-desc-issuer"><i class="fa-solid fa-graduation-cap"></i> BRCM College of Engg & Tech</p>
+                            <p class="cert-desc-text">
+                                Active participant in college departmental coding events, academic quizzes, technical workshops, and student developer challenges at BRCM College of Engineering & Technology.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="cert-nav-arrow cert-next" id="certModalNext" aria-label="Next Certificate">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="photo-modal-footer cert-modal-footer">
+                <div class="cert-modal-dots" id="certModalDots"></div>
+                <button class="btn btn-outline btn-sm" id="closeCertFooterBtn">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="logo">
+            KRISHNA <span>KUMAR</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#hero" class="links active">Home</a>
+            <a href="#about" class="links">About</a>
+            <a href="#skills" class="links">Skills</a>
+            <a href="#projects" class="links">Projects</a>
+            <a href="#contact" class="links">Contact</a>
+            <a href="#contact" class="nav-cta-btn">Connect</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+
+            <div class="hero-content">
+
+                <!-- Hero Text -->
+                <div class="hero-text">
+                    <div class="badge-terminal">
+                        <span class="pulse-dot"></span>
+                        <span>2nd Year B.Tech CSE • BRCM CET</span>
+                    </div>
+
+                    <h1>Ohhhh!! so, <span class="highlight">THIS IS ME.</span></h1>
+
+                    <h2 class="hero-subtitle">
+                        <span class="static-prefix">I am a </span>
+                        <span class="typewriter" id="typewriter"></span>
+                        <span class="cursor">|</span>
+                    </h2>
+
+                    <!-- Prominent Requested Tagline -->
+                    <div class="hero-tagline-bar">
+                        <i class="fa-solid fa-terminal prompt-arrow"></i>
+                        <span class="tagline-text">Curious mind. Creative soul. Constantly building.</span>
+                    </div>
+
+
+                    <!-- Student Relevant Stats on the SAME line -->
+                    <div class="hero-stats">
+                        <div class="stat-pill">
+                            <span class="stat-badge-text">2nd Year</span>
+                            <span class="stat-label">3rd Sem CSE</span>
+                        </div>
+                        <div class="stat-pill">
+                            <span class="stat-badge-text">BRCM</span>
+                            <span class="stat-label">College of Engg</span>
+                        </div>
+                        <div class="stat-pill">
+                            <span class="stat-badge-text">C++ & Python</span>
+                            <span class="stat-label">DSA Core</span>
+                        </div>
+                        <div class="stat-pill stat-curiosity">
+                            <div class="stat-value-row">
+                                <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+                            </div>
+                            <span class="stat-label">Curiosity</span>
+                        </div>
+                    </div>
+
+                    <!-- Hero Button Group: View Projects + Resume Photo + Certificates + Say Hello -->
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fa-solid fa-rocket"></i>
+                            View Projects
+                        </a>
+
+                        <!-- Resume PDF Button (Next to View Projects) -->
+                        <button class="btn btn-resume" id="heroResumeBtn">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Resume
+                        </button>
+
+                        <!-- Certificates Slider Modal Button -->
+                        <button class="btn btn-cert" id="heroCertBtn">
+                            <i class="fa-solid fa-award"></i>
+                            Certificates
+                        </button>
+
+                        <a href="#contact" class="btn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Say Hello
+                        </a>
+                    </div>
+
+                    <!-- Social Media Links (Krishna's Exact Links) -->
+                    <div class="hero-socials">
+                        <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/krishna-kumar-3b6351371?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/yaa.itz_krisi?stkn=MTMycGNyaHByaTN1OA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="mailto:krisicollage21@gmail.com" aria-label="Email Krishna">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- 3D Glowy Profile Image Container - Shifted Up for Immediate Landing Visibility -->
+                <div class="profile-container">
+
+                    <div class="profile-3d-card" id="profileCard">
+                        
+                        <!-- Rotating Glowing Orbital Rings -->
+                        <div class="orbit-ring ring-outer-glow"></div>
+                        <div class="orbit-ring ring-inner-glow"></div>
+
+                        <!-- Cyber Corner Brackets -->
+                        <div class="cyber-corner corner-tl"></div>
+                        <div class="cyber-corner corner-tr"></div>
+                        <div class="cyber-corner corner-bl"></div>
+                        <div class="cyber-corner corner-br"></div>
+
+                        <!-- 3D Image Wrapper with Multi-layered Glow -->
+                        <div class="image-wrapper-3d" id="imageWrapper">
+                            <img
+                                src="Profile.jpg"
+                                alt="Krishna Kumar Profile"
+                                class="profile-img"
+                                onerror="this.onerror=null; this.src='profile.jpg';"
+                            >
+                            <!-- Dynamic light glare effect -->
+                            <div class="glare-overlay" id="glareOverlay"></div>
+                        </div>
+
+                        <!-- Cyber HUD Status Tag -->
+                        <div class="profile-hud-tag">
+                            <span class="hud-dot"></span>
+                            <span>KRISHNA KUMAR // BRCM CSE</span>
+                        </div>
+
+                        <!-- Floating Badges with 3D Depth matching user's stack -->
+                        <div class="floating-badge badge-top-right">
+                            <i class="fa-solid fa-code"></i>
+                            <span>C & C++</span>
+                        </div>
+                        <div class="floating-badge badge-bottom-left">
+                            <i class="fa-brands fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="floating-badge badge-bottom-right">
+                            <i class="fa-brands fa-react"></i>
+                            <span>React (Learning)</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-heading">// 01. STUDENT PROFILE</span>
+                <h2>About Me</h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="about-grid">
+                <!-- Bio & Learning Journey -->
+                <div class="about-bio">
+                    <p class="lead-text">
+                        Hello! I'm <strong>Krishna Kumar</strong>, currently pursuing my <strong>B.Tech in Computer Science & Engineering</strong> (2nd Year, 3rd Semester) at <strong>BRCM College of Engineering and Technology</strong>, originating from <strong>Gaya, Bihar</strong>.
+                    </p>
+                    <p>
+                        <em>"Curious mind. Creative soul. Constantly building."</em> That philosophy drives my daily code routines. My focus is centered on mastering <strong>Data Structures & Algorithms (DSA)</strong> using C and C++, strengthening my core computer science principles, and building modern web experiences with HTML, CSS, JavaScript, and React.
+                    </p>
+                    <p>
+                        I'm also actively fascinated by artificial intelligence and exploring <strong>Python & AI/ML</strong>. I believe that consistent problem-solving, building hands-on projects, and staying curious are the keys to becoming an impactful software engineer.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="hl-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="hl-content">
+                                <h4>College & Degree</h4>
+                                <p>B.Tech in CSE — BRCM College of Engineering & Technology (2nd Year / 3rd Sem)</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="hl-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="hl-content">
+                                <h4>Hometown</h4>
+                                <p>Gaya, Bihar, India</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="hl-icon"><i class="fa-solid fa-brain"></i></div>
+                            <div class="hl-content">
+                                <h4>Primary Interests</h4>
+                                <p>Data Structures & Algorithms, Web Development, and exploring AI/ML</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Code / Terminal Card -->
+                <div class="about-terminal-card">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="terminal-title">krishna@brcm: ~/profile.json</span>
+                        <button class="copy-terminal-btn" id="copyCodeBtn" title="Copy code" aria-label="Copy terminal content">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <pre class="terminal-body"><code><span class="t-key">const</span> <span class="t-var">krishnaKumar</span> = {
+  <span class="t-prop">name</span>: <span class="t-string">"Krishna Kumar"</span>,
+  <span class="t-prop">tagline</span>: <span class="t-string">"Curious mind. Creative soul. Constantly building."</span>,
+  <span class="t-prop">college</span>: <span class="t-string">"BRCM College of Engineering and Technology"</span>,
+  <span class="t-prop">degree</span>: <span class="t-string">"B.Tech in CSE (2nd Year)"</span>,
+  <span class="t-prop">location</span>: <span class="t-string">"Gaya, Bihar, India"</span>,
+  <span class="t-prop">languages</span>: [<span class="t-string">"C"</span>, <span class="t-string">"C++"</span>, <span class="t-string">"Python"</span>, <span class="t-string">"JavaScript"</span>],
+  <span class="t-prop">webTech</span>: [<span class="t-string">"HTML5"</span>, <span class="t-string">"CSS3"</span>, <span class="t-string">"React (Learning)"</span>],
+  <span class="t-prop">tools</span>: [<span class="t-string">"VS Code"</span>, <span class="t-string">"Git"</span>, <span class="t-string">"GitHub"</span>, <span class="t-string">"Linux (Basics)"</span>],
+  <span class="t-prop">interests</span>: [
+    <span class="t-string">"Data Structures & Algorithms"</span>,
+    <span class="t-string">"Web Development"</span>,
+    <span class="t-string">"Exploring AI/ML"</span>
+  ],
+  <span class="t-func">getMotto</span>: <span class="t-key">function</span>() {
+    <span class="t-key">return</span> <span class="t-string">"Learn with curiosity, build with passion!"</span>;
+  }
+};</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         SKILLS SECTION (MATCHING KRISHNA'S EXACT STACK)
+         ======================================================== -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-heading">// 02. MY TOOLKIT</span>
+                <h2>Skills & Tech Stack</h2>
+                <div class="title-bar"></div>
+                <p class="section-intro">The languages, frameworks, and tools I actively learn and work with as a 2nd year CS student.</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <!-- Category 1: Programming Languages -->
+                <div class="skill-category-card">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-code cat-icon"></i>
+                        <div>
+                            <h3>Programming Languages</h3>
+                            <span class="cat-sub">Core coding & problem solving</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-items-list">
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-solid fa-c skill-ic"></i>
+                                <span class="skill-name">C</span>
+                            </div>
+                            <span class="skill-pill-tag tag-core">Foundations</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-solid fa-laptop-code skill-ic"></i>
+                                <span class="skill-name">C++</span>
+                            </div>
+                            <span class="skill-pill-tag tag-strong">DSA Core</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-brands fa-python skill-ic"></i>
+                                <span class="skill-name">Python</span>
+                            </div>
+                            <span class="skill-pill-tag tag-practicing">Scripting & AI</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-brands fa-js skill-ic"></i>
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                            <span class="skill-pill-tag tag-practicing">Web Logic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Web Technologies -->
+                <div class="skill-category-card">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-globe cat-icon"></i>
+                        <div>
+                            <h3>Web Development</h3>
+                            <span class="cat-sub">Creating web interfaces</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-items-list">
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-brands fa-html5 skill-ic"></i>
+                                <span class="skill-name">HTML5</span>
+                            </div>
+                            <span class="skill-pill-tag tag-strong">Proficient</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-brands fa-css3-alt skill-ic"></i>
+                                <span class="skill-name">CSS3 & Layouts</span>
+                            </div>
+                            <span class="skill-pill-tag tag-strong">Proficient</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-brands fa-react skill-ic"></i>
+                                <span class="skill-name">React</span>
+                            </div>
+                            <span class="skill-pill-tag tag-learning">Learning</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-solid fa-mobile-screen skill-ic"></i>
+                                <span class="skill-name">Responsive Design</span>
+                            </div>
+                            <span class="skill-pill-tag tag-practicing">Practicing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Tools & Platforms -->
+                <div class="skill-category-card">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-wrench cat-icon"></i>
+                        <div>
+                            <h3>Tools & Platforms</h3>
+                            <span class="cat-sub">Developer environment</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-items-list">
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-solid fa-cube skill-ic"></i>
+                                <span class="skill-name">VS Code</span>
+                            </div>
+                            <span class="skill-pill-tag tag-strong">Daily Driver</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-brands fa-git-alt skill-ic"></i>
+                                <span class="skill-name">Git</span>
+                            </div>
+                            <span class="skill-pill-tag tag-practicing">Version Control</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-brands fa-github skill-ic"></i>
+                                <span class="skill-name">GitHub</span>
+                            </div>
+                            <span class="skill-pill-tag tag-practicing">Code Hosting</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-solid fa-terminal skill-ic"></i>
+                                <span class="skill-name">Linux (Basics)</span>
+                            </div>
+                            <span class="skill-pill-tag tag-basics">CLI Basics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Topics of Interest -->
+                <div class="skill-category-card">
+                    <div class="cat-header">
+                        <i class="fa-solid fa-brain cat-icon"></i>
+                        <div>
+                            <h3>Areas of Interest</h3>
+                            <span class="cat-sub">Current study focus</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-items-list">
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-solid fa-diagram-project skill-ic"></i>
+                                <span class="skill-name">Data Structures & Algo</span>
+                            </div>
+                            <span class="skill-pill-tag tag-core">High Priority</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-solid fa-robot skill-ic"></i>
+                                <span class="skill-name">Exploring AI / ML</span>
+                            </div>
+                            <span class="skill-pill-tag tag-exploring">Exploring</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-solid fa-layer-group skill-ic"></i>
+                                <span class="skill-name">Web Development</span>
+                            </div>
+                            <span class="skill-pill-tag tag-learning">Building Up</span>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-left">
+                                <i class="fa-solid fa-book-open-reader skill-ic"></i>
+                                <span class="skill-name">Computer Science Core</span>
+                            </div>
+                            <span class="skill-pill-tag tag-basics">Academics</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================
+         PROJECTS SECTION (3D DEPTH SLIDER - READY FOR FUTURE PROJECTS)
+         ======================================================== -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-heading">// 03. PROJECTS PREVIEW</span>
+                <h2>My Projects</h2>
+                <div class="title-bar"></div>
+                <p class="section-intro">
+                    Showcase of my current experiments and upcoming student projects. As I build new projects, they will be updated here and on my GitHub!
+                </p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="dsa">DSA & C++</button>
+                <button class="filter-btn" data-filter="aiml">AI / ML</button>
+            </div>
+
+            <!-- 3D SLIDER STAGE -->
+            <div class="slider-container-3d">
+                <!-- Navigation Prev/Next Arrows -->
+                <button class="slider-arrow prev-btn" id="sliderPrev" aria-label="Previous Project">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <!-- 3D Perspective Stage -->
+                <div class="slider-stage-3d" id="sliderStage">
+
+                    <!-- Project Card 1: DSA / Algorithms -->
+                    <div class="project-card-3d" data-category="dsa web">
+                        <div class="project-banner">
+                            <div class="banner-gradient bg-proj-2">
+                                <i class="fa-solid fa-network-wired project-symbol"></i>
+                            </div>
+                            <div class="project-badge">DSA & Web</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Algorithm & Pathfinding Visualizer</h3>
+                            <p>
+                                Interactive tool designed to demonstrate how Dijkstra's algorithm, BFS/DFS, and array sorting algorithms operate step-by-step to assist in learning DSA concepts.
+                            </p>
+                            <div class="project-tech">
+                                <span>C++</span>
+                                <span>JavaScript</span>
+                                <span>HTML5 Canvas</span>
+                                <span>DSA</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Preview
+                                </a>
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link outline" aria-label="GitHub Repository">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: Cyberpunk Portfolio -->
+                    <div class="project-card-3d" data-category="web">
+                        <div class="project-banner">
+                            <div class="banner-gradient bg-proj-1">
+                                <i class="fa-solid fa-terminal project-symbol"></i>
+                            </div>
+                            <div class="project-badge">Web Portfolio</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Cyberpunk 3D Developer Portfolio</h3>
+                            <p>
+                                High-performance personal website featuring a custom 0-100% preloader, interactive 3D mouse-tilt profile card, and a 3D depth project slider built with vanilla web technologies.
+                            </p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>3D Transforms</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#hero" class="proj-link primary">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Current Site
+                                </a>
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link outline" aria-label="GitHub Repository">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: React Student App -->
+                    <div class="project-card-3d" data-category="web">
+                        <div class="project-banner">
+                            <div class="banner-gradient bg-proj-3">
+                                <i class="fa-brands fa-react project-symbol"></i>
+                            </div>
+                            <div class="project-badge">In Development</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Student Task & Routine Tracker</h3>
+                            <p>
+                                A responsive web productivity app built for college students to track assignment deadlines, study routines, and focus sessions with local storage persistence.
+                            </p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>JavaScript</span>
+                                <span>CSS3</span>
+                                <span>LocalStorage</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link primary">
+                                    <i class="fa-solid fa-clock"></i> Upcoming
+                                </a>
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link outline" aria-label="GitHub Repository">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4: Python AI / ML Explorer -->
+                    <div class="project-card-3d" data-category="aiml">
+                        <div class="project-banner">
+                            <div class="banner-gradient bg-proj-4">
+                                <i class="fa-brands fa-python project-symbol"></i>
+                            </div>
+                            <div class="project-badge">AI / ML Explorer</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Python ML Predictor & Data Explorer</h3>
+                            <p>
+                                Exploratory machine learning project in Python experimenting with classification models, data processing, and predictive pattern analysis on sample datasets.
+                            </p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Scikit-Learn</span>
+                                <span>Pandas</span>
+                                <span>Matplotlib</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link primary">
+                                    <i class="fa-solid fa-clock"></i> Upcoming
+                                </a>
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link outline" aria-label="GitHub Repository">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5: C++ Student Record System -->
+                    <div class="project-card-3d" data-category="dsa">
+                        <div class="project-banner">
+                            <div class="banner-gradient bg-proj-6">
+                                <i class="fa-solid fa-file-code project-symbol"></i>
+                            </div>
+                            <div class="project-badge">C++ Academic</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Student Record Management System</h3>
+                            <p>
+                                Object-oriented C++ terminal application implementing file handling, search algorithms, and structured database operations for academic student records.
+                            </p>
+                            <div class="project-tech">
+                                <span>C++</span>
+                                <span>OOP</span>
+                                <span>File I/O</span>
+                                <span>Algorithms</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link primary">
+                                    <i class="fa-solid fa-clock"></i> Upcoming
+                                </a>
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link outline" aria-label="GitHub Repository">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6: Weather & Forecast Web App -->
+                    <div class="project-card-3d" data-category="web">
+                        <div class="project-banner">
+                            <div class="banner-gradient bg-proj-5">
+                                <i class="fa-solid fa-cloud-sun-rain project-symbol"></i>
+                            </div>
+                            <div class="project-badge">Web API</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Live Weather & City Forecast App</h3>
+                            <p>
+                                Clean responsive web application fetching live atmospheric metrics, multi-day forecasting, and location search using asynchronous JavaScript and OpenWeather API.
+                            </p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>REST API</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link primary">
+                                    <i class="fa-solid fa-clock"></i> Upcoming
+                                </a>
+                                <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" class="proj-link outline" aria-label="GitHub Repository">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="slider-arrow next-btn" id="sliderNext" aria-label="Next Project">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Slider Pagination & Indicator -->
+            <div class="slider-controls-bottom">
+                <div class="slider-dots" id="sliderDots"></div>
+                <div class="slider-counter">
+                    <span id="slideCurrent">1</span> / <span id="slideTotal">6</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <span class="sub-heading">// 04. GET IN TOUCH</span>
+                <h2>Contact Me</h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Contact Info Card -->
+                <div class="contact-card info-card">
+                    <h3>Let's Connect & <span class="highlight">Collaborate</span></h3>
+                    <p>
+                        I'm always excited to connect with fellow students, developers, and mentors. Whether you want to discuss college projects, DSA problem-solving, web ideas, or just say hi, feel free to drop me a message!
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="detail-content">
+                                <span>Email Me</span>
+                                <div class="email-copy-row">
+                                    <strong id="emailText">krisicollage21@gmail.com</strong>
+                                    <button class="copy-email-btn" id="copyEmailBtn" title="Copy email address" aria-label="Copy email">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="detail-content">
+                                <span>Location</span>
+                                <strong>Gaya, Bihar, India</strong>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="detail-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="detail-content">
+                                <span>College</span>
+                                <strong>BRCM College of Engg & Tech (2nd Year)</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Availability indicator -->
+                    <div class="availability-badge">
+                        <span class="pulse-indicator"></span>
+                        <span>Open for Learning Projects & Student Collaborations</span>
+                    </div>
+
+                    <!-- Krishna's Exact Social Links -->
+                    <div class="contact-socials">
+                        <a href="https://github.com/krisiroy12" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/krishna-kumar-3b6351371?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/yaa.itz_krisi?stkn=MTMycGNyaHByaTN1OA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="mailto:krisicollage21@gmail.com" aria-label="Email Krishna">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form -->
+                <div class="contact-card form-card">
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-user input-icon"></i>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
+                            </div>
+                            <span class="error-msg" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-at input-icon"></i>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email">
+                            </div>
+                            <span class="error-msg" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-tag input-icon"></i>
+                                <input type="text" id="subject" name="subject" placeholder="Project Idea / Tech Discussion / Hello!" required>
+                            </div>
+                            <span class="error-msg" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <div class="input-wrapper textarea-wrapper">
+                                <i class="fa-solid fa-message input-icon"></i>
+                                <textarea id="message" name="message" rows="5" placeholder="Hi Krishna, I checked out your portfolio and wanted to connect..." required></textarea>
+                            </div>
+                            <span class="error-msg" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+                            <span class="btn-text">Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#hero" class="logo">
+                    KRISHNA <span>KUMAR</span>
+                </a>
+                <p>Curious mind. Creative soul. Constantly building. • BRCM College of Engineering and Technology.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Krishna Kumar. All rights reserved. | Gaya, Bihar</p>
+                <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
+                    <i class="fa-solid fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
