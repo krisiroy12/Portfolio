@@ -3338,4 +3338,324 @@ footer {
     }
 }
 
+/* ========================================================
+   FINAL RESPONSIVE FIX
+   Phone • Tablet • Laptop • Desktop
+   ======================================================== */
+
+/* Prevent unwanted horizontal overflow */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Responsive container */
+.container {
+    width: min(100%, 1320px);
+    padding-left: clamp(16px, 3vw, 26px);
+    padding-right: clamp(16px, 3vw, 26px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Better section spacing */
+#about,
+#skills,
+#certifications,
+#projects,
+#contact {
+    padding-top: clamp(45px, 6vw, 60px);
+    padding-bottom: clamp(45px, 6vw, 60px);
+}
+
+/* =========================
+   TABLET
+   ========================= */
+@media (max-width: 1024px) {
+
+    #hero {
+        min-height: auto;
+        padding-top: 95px;
+        padding-bottom: 45px;
+    }
+
+    .hero-content {
+        width: 100%;
+        gap: clamp(25px, 5vw, 40px);
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2rem, 5vw, 2.6rem);
+    }
+
+    .profile-container {
+        margin-top: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 64px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .logo {
+        font-size: clamp(1.15rem, 5vw, 1.5rem);
+        letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+        top: 64px;
+        height: calc(100vh - 64px);
+    }
+
+    #hero {
+        padding-top: 88px;
+        padding-bottom: 35px;
+    }
+
+    .hero-content {
+        gap: 25px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
+        line-height: 1.12;
+        margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 4.5vw, 1.2rem);
+        line-height: 1.4;
+    }
+
+    .hero-tagline-bar {
+        max-width: 100%;
+        font-size: clamp(0.68rem, 3vw, 0.82rem);
+        padding: 6px 10px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .hero-bio-p {
+        max-width: 100%;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .hero-stats {
+        width: 100%;
+        max-width: 100%;
+        gap: 8px;
+    }
+
+    .stat-pill {
+        min-width: 0;
+        padding: 8px 5px;
+    }
+
+    .stat-badge-text {
+        font-size: clamp(0.8rem, 3.5vw, 1.05rem);
+    }
+
+    .stat-num {
+        font-size: clamp(1rem, 4vw, 1.25rem);
+    }
+
+    .stat-label {
+        font-size: clamp(0.58rem, 2.5vw, 0.7rem);
+    }
+
+    /* Buttons fit every phone */
+    .btn-group {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: 0;
+        padding: 11px 14px;
+        font-size: 0.85rem;
+    }
+
+    /* Profile automatically scales */
+    .profile-3d-card {
+        width: clamp(220px, 70vw, 300px);
+        height: clamp(220px, 70vw, 300px);
+    }
+
+    .ring-outer-glow {
+        width: clamp(215px, 68vw, 290px);
+        height: clamp(215px, 68vw, 290px);
+    }
+
+    .ring-inner-glow {
+        width: clamp(195px, 61vw, 260px);
+        height: clamp(195px, 61vw, 260px);
+    }
+
+    .image-wrapper-3d {
+        width: clamp(160px, 52vw, 220px);
+        height: clamp(160px, 52vw, 220px);
+    }
+
+    .profile-hud-tag {
+        font-size: clamp(0.6rem, 2.7vw, 0.72rem);
+        padding: 4px 9px;
+    }
+
+    .floating-badge {
+        font-size: clamp(0.58rem, 2.8vw, 0.72rem);
+        padding: 4px 8px;
+    }
+
+    /* Section headings */
+    .section-title {
+        margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+        font-size: clamp(1.65rem, 7vw, 2rem);
+    }
+
+    .sub-heading {
+        font-size: 0.7rem;
+    }
+
+    /* About */
+    .about-grid {
+        gap: 25px;
+    }
+
+    .about-bio .lead-text {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .about-bio p {
+        font-size: 0.92rem;
+    }
+
+    /* Cards */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .skill-category-card {
+        padding: 17px;
+    }
+
+    /* Project slider */
+    .slider-container-3d {
+        min-height: 430px;
+    }
+
+    .slider-stage-3d {
+        height: 420px;
+    }
+
+    .project-card-3d {
+        width: min(92%, 400px);
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+   360px AND BELOW
+   ========================= */
+@media (max-width: 380px) {
+
+    .container {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    #hero {
+        padding-top: 82px;
+        padding-bottom: 28px;
+    }
+
+    .hero-content {
+        gap: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-tagline-bar {
+        font-size: 0.64rem;
+        padding: 5px 8px;
+    }
+
+    .hero-stats {
+        gap: 6px;
+    }
+
+    .stat-pill {
+        padding: 7px 3px;
+    }
+
+    .stat-badge-text {
+        font-size: 0.75rem;
+    }
+
+    .stat-num {
+        font-size: 0.95rem;
+    }
+
+    .stat-label {
+        font-size: 0.55rem;
+    }
+
+    .hero-socials {
+        gap: 9px;
+    }
+
+    .hero-socials a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .profile-3d-card {
+        width: 215px;
+        height: 215px;
+    }
+
+    .ring-outer-glow {
+        width: 210px;
+        height: 210px;
+    }
+
+    .ring-inner-glow {
+        width: 188px;
+        height: 188px;
+    }
+
+    .image-wrapper-3d {
+        width: 155px;
+        height: 155px;
+    }
+
+    .floating-badge {
+        font-size: 0.55rem;
+        padding: 3px 6px;
+    }
+}
+
 
